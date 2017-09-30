@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player: one
+  coordinate: one
+  color: one
+  pip: one
+  occupied: false
+
+two:
+  player: two
+  coordinate: two
+  color: two
+  pip: two
+  occupied: false

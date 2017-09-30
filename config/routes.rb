@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :games
   resources :colors
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

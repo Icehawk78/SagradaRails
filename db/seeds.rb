@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Color.create([{name: 'red'}, {name: 'blue'}, {name: 'green'}, {name: 'yellow'}, {name:'purple'}])
+Pip.create([{value: 1}, {value: 2}, {value: 3}, {value: 4}, {value: 5}, {value: 6}])
+
