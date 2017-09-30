@@ -1,0 +1,2 @@
+class Pip < ApplicationRecord
+end
