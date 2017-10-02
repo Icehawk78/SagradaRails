@@ -7,50 +7,52 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Color.delete_all
-Pips.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!(Color.table_name)
+Pip.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!(Pip.table_name)
 
-Color.create([{name: 'red'}, {name: 'blue'}, {name: 'green'}, {name: 'yellow'}, {name:'purple'}])
-Pip.create([{value: 1}, {value: 2}, {value: 3}, {value: 4}, {value: 5}, {value: 6}])
+Neighbour.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!(Neighbour.table_name)
+Coordinate.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!(Coordinate.table_name)
 
+def load_seeds model
+  model.create(YAML::load_file(Rails.root.join('db', 'seeds', "#{model.table_name}.yml")))
+end
 
 def neighbor (coordinate, full_list)
-  orthogonal = full_list.find_all{|c|
-    (c[:x] == coordinate[:x] and c[:y] == coordinate[:y] + 1) or
-        (c[:x] == coordinate[:x] and c[:y] == coordinate[:y] - 1) or
-        (c[:x] == coordinate[:x] + 1 and c[:y] == coordinate[:y]) or
-        (c[:x] == coordinate[:x] - 1 and c[:y] == coordinate[:y])
-  }
-  diagonal = full_list.find_all{|c|
-    (c[:x] == coordinate[:x] + 1 and c[:y] == coordinate[:y] + 1) or
-        (c[:x] == coordinate[:x] + 1 and c[:y] == coordinate[:y] - 1) or
-        (c[:x] == coordinate[:x] - 1 and c[:y] == coordinate[:y] + 1) or
-        (c[:x] == coordinate[:x] - 1 and c[:y] == coordinate[:y] - 1)
-  }
   {
-      orthogonal: orthogonal,
-      diagonal: diagonal
+      orthogonal: full_list.find_all{ |c|
+        (c.x == coordinate.x and c.y == coordinate.y + 1) or
+            (c.x == coordinate.x and c.y == coordinate.y - 1) or
+            (c.x == coordinate.x + 1 and c.y == coordinate.y) or
+            (c.x == coordinate.x - 1 and c.y == coordinate.y)
+      },
+      diagonal: full_list.find_all{ |c|
+        (c.x == coordinate.x + 1 and c.y == coordinate.y + 1) or
+            (c.x == coordinate.x + 1 and c.y == coordinate.y - 1) or
+            (c.x == coordinate.x - 1 and c.y == coordinate.y + 1) or
+            (c.x == coordinate.x - 1 and c.y == coordinate.y - 1)
+      }
   }
 end
 
-c_id = 0
+# Color.create(YAML::load_file(Rails.root.join('db', 'seeds', 'color.yml')))
+load_seeds(Color)
+load_seeds(Pip)
+# Pip.create([{value: 1}, {value: 2}, {value: 3}, {value: 4}, {value: 5}, {value: 6}])
+
+
 res = 4.times.map {|y|
   5.times.map {|x|
-    c_id += 1
-    {id: c_id, x: x, y: y}
+    Coordinate.create(x: x, y: y)
   }
 }.flatten
 
-n_id = 0
 neighbor_list = res.map{|c|
-  neighbor(c, res).map{|type, neighbors|
+  neighbor(c, res).map{|direction, neighbors|
     neighbors.map{|n|
-      n_id += 1
-      {
-          id: n_id,
-          coordinate_id: c[:id],
-          neighbor_id: n[:id],
-          type: type
-      }
+      Neighbour.create(start_coordinate: c, neighbour_coordinate: n, direction: direction)
     }
   }
 }.flatten
