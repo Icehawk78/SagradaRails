@@ -1,0 +1,218 @@
+---
+# 1. (0,0)
+- id: 1
+  coordinate_id: 1
+  neighbour_id: 2
+  type: orthogonal
+
+- id: 2
+  coordinate_id: 1
+  neighbour_id: 6
+  type: orthogonal
+
+- id: 3
+  coordinate_id: 1
+  neighbour_id: 7
+  type: diagonal
+
+# 2. (1,0)
+- id: 4
+  coordinate_id: 2
+  neighbour_id: 1
+  type: orthogonal
+
+- id: 5
+  coordinate_id: 2
+  neighbour_id: 3
+  type: orthogonal
+
+- id: 6
+  coordinate_id: 2
+  neighbour_id: 6
+  type: diagonal
+
+- id: 7
+  coordinate_id: 2
+  neighbour_id: 7
+  type: orthogonal
+
+- id: 8
+  coordinate_id: 2
+  neighbour_id: 8
+  type: diagonal
+
+# 3. (2,0)
+- id: 9
+  coordinate_id: 3
+  neighbour_id: 2
+  type: orthogonal
+
+- id: 10
+  coordinate_id: 3
+  neighbour_id: 4
+  type: orthogonal
+
+- id: 11
+  coordinate_id: 3
+  neighbour_id: 7
+  type: diagonal
+
+- id: 12
+  coordinate_id: 3
+  neighbour_id: 8
+  type: orthogonal
+
+- id: 13
+  coordinate_id: 3
+  neighbour_id: 9
+  type: diagonal
+
+# 4. (3,0)
+- id: 14
+  coordinate_id: 4
+  neighbour_id: 3
+  type: orthogonal
+
+- id: 15
+  coordinate_id: 4
+  neighbour_id: 5
+  type: orthogonal
+
+- id: 16
+  coordinate_id: 4
+  neighbour_id: 8
+  type: diagonal
+
+- id: 17
+  coordinate_id: 4
+  neighbour_id: 9
+  type: orthogonal
+
+- id: 18
+  coordinate_id: 4
+  neighbour_id: 10
+  type: diagonal
+
+# 5. (4,0)
+- id: 19
+  coordinate_id: 5
+  neighbour_id: 4
+  type: orthogonal
+
+- id: 20
+  coordinate_id: 5
+  neighbour_id: 9
+  type: diagonal
+
+- id: 21
+  coordinate_id: 5
+  neighbour_id: 10
+  type: orthogonal
+
+# 6. (0,1)
+- id: 22
+  coordinate_id: 6
+  neighbour_id: 1
+  type: orthogonal
+
+- id: 23
+  coordinate_id: 6
+  neighbour_id: 7
+  type: orthogonal
+
+- id: 24
+  coordinate_id: 6
+  neighbour_id: 2
+  type: diagonal
+
+- id: 25
+  coordinate_id: 6
+  neighbour_id: 11
+  type: orthogonal
+
+- id: 26
+  coordinate_id: 6
+  neighbour_id: 12
+  type: diagonal
+
+# 7. (1,1)
+- id: 27
+  coordinate_id: 7
+  neighbour_id: 1
+  type: diagonal
+
+- id: 28
+  coordinate_id: 7
+  neighbour_id: 2
+  type: orthogonal
+
+- id: 29
+  coordinate_id: 7
+  neighbour_id: 3
+  type: diagonal
+
+- id: 30
+  coordinate_id: 7
+  neighbour_id: 6
+  type: orthogonal
+
+- id: 31
+  coordinate_id: 7
+  neighbour_id: 8
+  type: orthogonal
+
+- id: 32
+  coordinate_id: 7
+  neighbour_id: 11
+  type: diagonal
+
+- id: 33
+  coordinate_id: 7
+  neighbour_id: 12
+  type: orthogonal
+
+- id: 34
+  coordinate_id: 7
+  neighbour_id: 13
+  type: diagonal
+
+# 8. (2,1)
+- id: 35
+  coordinate_id: 8
+  neighbour_id: 2
+  type: diagonal
+
+- id: 36
+  coordinate_id: 8
+  neighbour_id: 3
+  type: orthogonal
+
+- id: 37
+  coordinate_id: 8
+  neighbour_id: 4
+  type: diagonal
+
+- id: 38
+  coordinate_id: 8
+  neighbour_id: 7
+  type: orthogonal
+
+- id: 39
+  coordinate_id: 8
+  neighbour_id: 9
+  type: orthogonal
+
+- id: 40
+  coordinate_id: 8
+  neighbour_id: 12
+  type: diagonal
+
+- id: 41
+  coordinate_id: 8
+  neighbour_id: 13
+  type: orthogonal
+
+- id: 42
+  coordinate_id: 8
+  neighbour_id: 14
+  type: diagonal

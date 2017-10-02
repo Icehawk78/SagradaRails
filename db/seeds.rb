@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Color.delete_all
+Pips.delete_all
+
 Color.create([{name: 'red'}, {name: 'blue'}, {name: 'green'}, {name: 'yellow'}, {name:'purple'}])
 Pip.create([{value: 1}, {value: 2}, {value: 3}, {value: 4}, {value: 5}, {value: 6}])
 
