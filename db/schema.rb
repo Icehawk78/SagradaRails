@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930034521) do
+ActiveRecord::Schema.define(version: 20171001195504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170930034521) do
   create_table "coordinates", force: :cascade do |t|
     t.integer "x"
     t.integer "y"
-    t.integer "neighbours", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,6 +58,15 @@ ActiveRecord::Schema.define(version: 20170930034521) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "neighbours", force: :cascade do |t|
+    t.bigint "coordinate_id"
+    t.integer "neighbour_id"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coordinate_id"], name: "index_neighbours_on_coordinate_id"
   end
 
   create_table "pips", force: :cascade do |t|
@@ -118,6 +126,7 @@ ActiveRecord::Schema.define(version: 20170930034521) do
   add_foreign_key "game_dices", "games"
   add_foreign_key "game_dices", "pips"
   add_foreign_key "game_dices", "rounds"
+  add_foreign_key "neighbours", "coordinates"
   add_foreign_key "players", "colors"
   add_foreign_key "players", "games"
   add_foreign_key "players", "users"
