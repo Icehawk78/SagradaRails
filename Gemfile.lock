@@ -66,7 +66,6 @@ GEM
     execjs (2.7.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.18)
     ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -92,8 +91,6 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     nio4r (2.1.0)
-    nokogiri (1.8.1)
-      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.1-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     oauth2 (1.4.0)
@@ -114,7 +111,6 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    pg (0.21.0)
     pg (0.21.0-x86-mingw32)
     public_suffix (3.0.0)
     puma (3.10.0)
@@ -195,7 +191,6 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
-  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -216,4 +211,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2

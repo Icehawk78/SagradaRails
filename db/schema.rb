@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001195504) do
+ActiveRecord::Schema.define(version: 20171002152845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20171001195504) do
   create_table "neighbours", force: :cascade do |t|
     t.bigint "coordinate_id"
     t.integer "neighbour_id"
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "direction"
     t.index ["coordinate_id"], name: "index_neighbours_on_coordinate_id"
   end
 
