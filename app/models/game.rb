@@ -20,14 +20,12 @@ class Game < ApplicationRecord
       colors -= [goal]
       p = Player.create(game: self, color: goal, user: u, order: i)
       p.setup
-      p
     end
 
     # Finally create rounds
     rounds = ROUNDS.times.map do |number|
       r = Round.create(game: self, round_number: number)
       r.setup
-      r
     end
 
     self

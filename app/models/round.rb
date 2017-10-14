@@ -11,5 +11,7 @@ class Round < ApplicationRecord
     turns = (players + players.reverse).map do |p|
       Turn.create(round: self, player: p)
     end
+
+    self
   end
 end

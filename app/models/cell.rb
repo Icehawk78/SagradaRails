@@ -5,10 +5,10 @@ class Cell < ApplicationRecord
   belongs_to :pip, optional: true
 
   def diagonals
-    player.cells.where(coordinate: coordinate.neighbour_coordinates.where(neighbours: {direction: 'diagonal'}))
+    player.cells.where(coordinate: coordinate.diagonals)
   end
 
   def orthogonals
-    player.cells.where(coordinate: coordinate.neighbour_coordinates.where(neighbours: {direction: 'orthogonal'}))
+    player.cells.where(coordinate: coordinate.orthogonals)
   end
 end

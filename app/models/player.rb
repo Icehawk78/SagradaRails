@@ -10,6 +10,8 @@ class Player < ApplicationRecord
     cells = Coordinate.all.map do |c|
       Cell.create(player: self, coordinate: c)
     end
+
+    self
   end
 
   def board
