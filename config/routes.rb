@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :players
   resources :games
   resources :colors
   get 'auth/:provider/callback', to: 'sessions#create'
