@@ -6,9 +6,17 @@
     <label>Display Game #</label>
     <select class="form-control" ng-model="vm.game" ng-options="g.id for g in vm.all_games track by g.id"></select>
   </div>
-  <div ng-if="vm.game" id="game_display">
-    <p>{{ vm.game }}</p>
+  <div ng-if="vm.game" id="player_select">
+    <!--<p>{{ vm.game }}</p>-->
     <label>Display Player</label>
     <select class="form-control" ng-model="vm.player" ng-options="p.user.name for p in vm.game.players track by p.id"></select>
+  </div>
+  <div ng-if="vm.player" id="player_display">
+    <p ng-if="vm.player.color">Private Goal Color: {{ vm.player.color }}</p>
+    <table>
+      <tr ng-repeat="row in vm.player.board">
+        <td ng-repeat="cell in row" style="width: 30px; height: 30px; border: 1px black solid;" class="{{ cell.color }}">{{ cell.pip || "&nbsp;" }}</td>
+      </tr>
+    </table>
   </div>
 </section>
