@@ -64,7 +64,7 @@ class GamesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.includes(:players, :game_dices, :rounds).where(id: params[:id]).first
+      @game = Game.includes(:game_dices, :rounds, :players).where(id: params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
