@@ -14,6 +14,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Add compass for sass
+gem 'compass-rails', github: 'Compass/compass-rails'
 # Use jQuery for bootstrap and theme
 gem 'jquery-rails'
 # Use Bootstrap for display
