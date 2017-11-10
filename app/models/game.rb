@@ -28,6 +28,13 @@ class Game < ApplicationRecord
       r.setup
     end
 
+    # Draw dice for the first round
+    current_round.draw_dices
+
     self
+  end
+
+  def current_round
+    rounds.joins(:turns).where(turns: {cell_id:nil}).first
   end
 end
