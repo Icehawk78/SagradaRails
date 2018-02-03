@@ -1,5 +1,5 @@
 <section class="content-header">
-  <h1>Home#show</h1>
+  <h1>Games</h1>
 </section>
 <section class="content" ng-controller="HomeController as vm">
   <div id="game_select" ng-if="vm.all_games" class="form-group">
@@ -13,6 +13,13 @@
   </div>
   <div ng-if="vm.player" id="player_display">
     <p ng-if="vm.player.color">Private Goal Color: {{ vm.player.color }}</p>
+    <p>Game Dice for Round {{ vm.game.current_round_number+1 }}</p>
+    <table>
+      <tr>
+        <td ng-if="cell.round.round_number === vm.game.current_round_number" ng-repeat="cell in vm.game.game_dices" class="cell {{ cell.color.name }} occupied ">{{ cell.pip.value || "&nbsp;" }}</td>
+      </tr>
+    </table>
+    <br>
     <table>
       <tr ng-repeat="row in vm.player.board">
         <td ng-repeat="cell in row" class="cell {{ cell.color }} {{ cell.occupied | occupied }}">{{ cell.pip || "&nbsp;" }}</td>

@@ -352,6 +352,7 @@ $base-color: white;
   width: $cell-size;
   height: $cell-size;
   border: 1px black solid;
+  text-align: center;
 }
 
 .unoccupied {
@@ -361,4 +362,24 @@ $base-color: white;
 
 .occupied {
   @extend .cell;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
 }

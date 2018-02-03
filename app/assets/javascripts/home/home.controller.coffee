@@ -13,3 +13,4 @@ angular.module('sagrada', []);
 
 angular.module('sagrada')
   .controller('HomeController', HomeController)
+

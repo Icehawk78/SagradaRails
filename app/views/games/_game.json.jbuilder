@@ -12,3 +12,4 @@ json.rounds (game.rounds) do |round|
   json.turns round.turns
 end
 json.url game_url(game, format: :json)
+json.current_round_number game.current_round.round_number
