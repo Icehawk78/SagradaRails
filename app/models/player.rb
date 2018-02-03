@@ -24,4 +24,8 @@ class Player < ApplicationRecord
     }
   end
 
+  def is_board_empty?
+    cells.where(occupied: false).empty?
+  end
+
 end

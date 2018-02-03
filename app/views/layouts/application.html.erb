@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SagradaRails</title>
+    <title>Sagrada</title>
     <%= csrf_meta_tags %>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js'></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
 
-  <body>
-    <div>
-      <% if current_user %>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-      <% end %>
-    </div>
-    <div>
-      <%= yield %>
+  <body class="hold-transition skin-blue sidebar-mini" ng-app="sagrada">
+    <div class="wrapper">
+      <%= render 'layouts/navigation/layout'%>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/navigation/footer' %>
     </div>
   </body>
 </html>

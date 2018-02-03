@@ -23,7 +23,10 @@ default: &default
 
 development:
   <<: *default
+  port: 5433
   database: sagrada
+  username: <%= Rails.application.secrets.username %>
+  password: <%= Rails.application.secrets.password %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

@@ -1,6 +1,6 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /colors
   # GET /colors.json
   def index

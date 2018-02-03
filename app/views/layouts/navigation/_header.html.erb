@@ -1,0 +1,45 @@
+<header class="main-header">
+  <a class="logo" href="/">
+    Sagrada
+  </a>
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <% if current_user %>
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <img alt="User Image" class="user-image" src="<%= current_user.profile_url %>" />
+              <span class="hidden-xs"><%= current_user.name %></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <img class="img-circle" alt="User Image" src="<%= current_user.profile_url %>"> </img>
+                <p>
+                  <%= current_user.name %>
+                </p>
+              </li>
+              <li class="user-body">
+                <div class="col-xs-4 text-center">
+                  <a href="#"> Friends</a>
+                </div>
+              </li>
+              <li class="user-footer">
+                <div class="pull-right">
+                  <a class="btn btn-default btn-flat" href="<%= signout_path %>"> Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle" href="/auth/google_oauth2">Sign in With Google</a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,17 @@
+<div class="main-sidebar">
+  <div class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="active">
+        <a href="#" target="_self">
+          <i class="fa fa-puzzle-piece"></i>
+          <span>Games</span>
+          <% if current_user %>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"><%= current_user.games.size %></span>
+            </span>
+          <% end %>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
